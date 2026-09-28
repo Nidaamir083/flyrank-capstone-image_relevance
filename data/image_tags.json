@@ -1,0 +1,666 @@
+{
+  "images/bear/bear_1.jpg": {
+    "subject": "brown bear",
+    "category": "animal",
+    "attributes": [
+      "dark fur",
+      "wet",
+      "standing in water",
+      "large",
+      "wildlife"
+    ],
+    "caption": "A brown bear stands and moves through water.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/bear/bear_10.jpg": {
+    "subject": "grizzly bears",
+    "category": "animal",
+    "attributes": [
+      "brown fur",
+      "grassy bank",
+      "murky water",
+      "open mouth",
+      "interacting"
+    ],
+    "caption": "Two grizzly bears interacting by the water's edge, with one in the water and one on the grassy bank.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/bear/bear_2.jpg": {
+    "subject": "grizzly bear",
+    "category": "animal",
+    "attributes": [
+      "brown fur",
+      "sleeping",
+      "laying down",
+      "forest setting"
+    ],
+    "caption": "A brown grizzly bear rests on the ground in a forest setting.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/bear/bear_3.jpg": {
+    "subject": "brown bears",
+    "category": "animal",
+    "attributes": [
+      "brown fur",
+      "rocky terrain",
+      "mountainous background",
+      "two bears"
+    ],
+    "caption": "Two brown bears walking on a steep, rocky hill.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/bear/bear_4.jpg": {
+    "subject": "brown bear",
+    "category": "animal",
+    "attributes": [
+      "thick brown fur",
+      "standing next to a tree trunk",
+      "forested background with tree stumps",
+      "light-colored patch on neck"
+    ],
+    "caption": "A large brown bear standing next to a tree trunk in a sparse forest setting.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/bear/bear_5.jpg": {
+    "subject": "black bear",
+    "category": "animal",
+    "attributes": [
+      "thick black fur",
+      "brownish muzzle",
+      "slightly open mouth showing tongue",
+      "standing on a grassy slope",
+      "grey rocks in foreground"
+    ],
+    "caption": "A large black bear stands on a grassy slope next to rocks with its mouth slightly open.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/bear/bear_6.jpg": {
+    "subject": "brown bear",
+    "category": "animal",
+    "attributes": [
+      "resting on a log",
+      "brown fur",
+      "visible claws",
+      "rocky enclosure"
+    ],
+    "caption": "A brown bear rests its head on a large fallen log.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/bear/bear_7.jpg": {
+    "subject": "brown bear",
+    "category": "animal",
+    "attributes": [
+      "brown fur",
+      "sharp claws",
+      "alert expression",
+      "holding tree bark"
+    ],
+    "caption": "A brown bear peeks out from behind a tree with an alert expression.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/bear/bear_8.jpg": {
+    "subject": "grizzly bear",
+    "category": "animal",
+    "attributes": [
+      "brown fur",
+      "sharp claws",
+      "large snout",
+      "sitting on rock"
+    ],
+    "caption": "A grizzly bear rests its paws on a rock with its prominent claws visible.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/bear/bear_9.jpg": {
+    "subject": "grizzly bear",
+    "category": "animal",
+    "attributes": [
+      "brown fur",
+      "walking",
+      "large claws",
+      "outdoor enclosure"
+    ],
+    "caption": "A large grizzly bear walks across dirt in an enclosure.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/deer/deer_1.jpg": {
+    "subject": "blackbuck",
+    "category": "animal",
+    "attributes": [
+      "two antelopes",
+      "forest floor",
+      "brown and white fur",
+      "spiral horns",
+      "warm lighting"
+    ],
+    "caption": "Two blackbucks stand closely together on a forest floor bathed in warm light.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/deer/deer_10.jpg": {
+    "subject": "herd of blackbuck",
+    "category": "animal",
+    "attributes": [
+      "large herd",
+      "grazing on foliage",
+      "brown and white coats",
+      "horned antelopes",
+      "forest background"
+    ],
+    "caption": "A large herd of blackbuck antelopes gather and graze under a large tree.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/deer/deer_2.jpg": {
+    "subject": "deer",
+    "category": "animal",
+    "attributes": [
+      "close-up shot",
+      "brown fur",
+      "large ear",
+      "antlers present"
+    ],
+    "caption": "A close-up view of the head and eye of a deer.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/deer/deer_3.jpg": {
+    "subject": "nyala",
+    "category": "animal",
+    "attributes": [
+      "striped",
+      "brown",
+      "alert",
+      "wildlife",
+      "standing"
+    ],
+    "caption": "A nyala stands attentively in a dark, moody landscape.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/deer/deer_4.jpg": {
+    "subject": "giraffe and deer",
+    "category": "animal",
+    "attributes": [
+      "tall giraffe",
+      "grazing deer",
+      "woodland setting",
+      "daylight"
+    ],
+    "caption": "A giraffe and several deer coexist in a wooded clearing.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/deer/deer_5.jpg": {
+    "subject": "springbok",
+    "category": "animal",
+    "attributes": [
+      "four animals",
+      "grazing",
+      "grassy field",
+      "treed background"
+    ],
+    "caption": "Four springbok are grazing in a grassy field in front of a line of trees.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/deer/deer_6.jpg": {
+    "subject": "fallow deer",
+    "category": "animal",
+    "attributes": [
+      "spotted coat",
+      "standing in a grassy field",
+      "looking at the camera",
+      "multiple deer in background"
+    ],
+    "caption": "A spotted fallow deer stands in a grassy field looking directly at the camera with other deer in the background.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/deer/deer_7.jpg": {
+    "subject": "red deer",
+    "category": "animal",
+    "attributes": [
+      "antlers",
+      "brown fur",
+      "forest setting",
+      "group of three"
+    ],
+    "caption": "Three red deer stand in a forest clearing surrounded by trees and brush.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/deer/deer_8.jpg": {
+    "subject": "fallow deer",
+    "category": "animal",
+    "attributes": [
+      "spotted coat",
+      "herd",
+      "outdoor setting",
+      "natural light"
+    ],
+    "caption": "A herd of spotted fallow deer gathered in a clearing at sunset.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/deer/deer_9.jpg": {
+    "subject": "red deer",
+    "category": "animal",
+    "attributes": [
+      "antlers",
+      "brown fur",
+      "resting",
+      "forest background"
+    ],
+    "caption": "Two red deer with large antlers resting together in a wooded area.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/dog/dog_1.jpg": {
+    "subject": "dog",
+    "category": "animal",
+    "attributes": [
+      "black and tan fur",
+      "looking through bars",
+      "brown eyes",
+      "pointy ears"
+    ],
+    "caption": "A black and tan dog looks sadly through a set of metal bars.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/dog/dog_10.jpg": {
+    "subject": "puppy",
+    "category": "animal",
+    "attributes": [
+      "black and white",
+      "sitting",
+      "outdoor",
+      "young"
+    ],
+    "caption": "A small puppy sitting on the ground in a black and white photo.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/dog/dog_2.jpg": {
+    "subject": "Samoyed dog",
+    "category": "animal",
+    "attributes": [
+      "white fur",
+      "barking",
+      "black and white photography",
+      "showing teeth",
+      "high angle"
+    ],
+    "caption": "A black and white close-up shot of a white Samoyed dog barking with its mouth wide open.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/dog/dog_3.jpg": {
+    "subject": "dog",
+    "category": "animal",
+    "attributes": [
+      "black and white",
+      "running",
+      "playful",
+      "outdoor"
+    ],
+    "caption": "A dog running playfully outdoors in a black and white photo.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/dog/dog_4.jpg": {
+    "subject": "puppies",
+    "category": "animal",
+    "attributes": [
+      "black and white",
+      "young",
+      "small",
+      "standing"
+    ],
+    "caption": "Three small puppies stand on a ledge in a black and white photo.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/dog/dog_5.jpg": {
+    "subject": "puppy",
+    "category": "animal",
+    "attributes": [
+      "brown fur",
+      "sitting",
+      "floppy ears",
+      "outdoor setting"
+    ],
+    "caption": "A small brown puppy sitting on the ground outdoors.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/dog/dog_6.jpg": {
+    "subject": "dogs",
+    "category": "animal",
+    "attributes": [
+      "yawning",
+      "sitting together",
+      "black and tan dog",
+      "white dog",
+      "outdoor setting"
+    ],
+    "caption": "Two dogs, one yawning and one looking at it, rest together against a white wall.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/dog/dog_7.jpg": {
+    "subject": "dog",
+    "category": "animal",
+    "attributes": [
+      "white fur",
+      "fluffy",
+      "sitting",
+      "side profile"
+    ],
+    "caption": "A fluffy white dog sits in profile with another dog blurred in the background.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/dog/dog_8.jpg": {
+    "subject": "puppy",
+    "category": "animal",
+    "attributes": [
+      "tricolor",
+      "young",
+      "small",
+      "outdoor"
+    ],
+    "caption": "A small tricolor puppy stands outdoors on the ground.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/dog/dog_9.jpg": {
+    "subject": "puppy",
+    "category": "animal",
+    "attributes": [
+      "white",
+      "brown",
+      "furry",
+      "sitting",
+      "outdoors"
+    ],
+    "caption": "A cute puppy sits outdoors with another puppy in the background.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/red_fox/red_fox_1.jpg": {
+    "subject": "red fox",
+    "category": "animal",
+    "attributes": [
+      "reddish-brown fur",
+      "curled up",
+      "sitting in grass",
+      "pointed ears"
+    ],
+    "caption": "A red fox is resting in a patch of green grass.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/red_fox/red_fox_10.jpg": {
+    "subject": "red foxes",
+    "category": "animal",
+    "attributes": [
+      "red fur",
+      "lying down",
+      "grassy field",
+      "alert posture"
+    ],
+    "caption": "Two red foxes resting in a lush green grassy field.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/red_fox/red_fox_2.jpg": {
+    "subject": "red fox",
+    "category": "animal",
+    "attributes": [
+      "reddish-brown fur",
+      "pointed ears",
+      "lying in grass",
+      "alert expression"
+    ],
+    "caption": "A red fox rests peacefully in a grassy field.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/red_fox/red_fox_3.jpg": {
+    "subject": "red fox",
+    "category": "animal",
+    "attributes": [
+      "orange fur",
+      "white chest",
+      "pointy ears",
+      "direct gaze",
+      "portrait shot"
+    ],
+    "caption": "A close-up portrait of a red fox staring intently at the camera.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/red_fox/red_fox_4.jpg": {
+    "subject": "red fox",
+    "category": "animal",
+    "attributes": [
+      "orange fur",
+      "white chest",
+      "lying down",
+      "snowy ground"
+    ],
+    "caption": "A red fox rests on a snowy rock outdoors.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/red_fox/red_fox_5.jpg": {
+    "subject": "red fox",
+    "category": "animal",
+    "attributes": [
+      "orange fur",
+      "sitting",
+      "bushy tail",
+      "green grass background"
+    ],
+    "caption": "A red fox sitting alertly in a grassy field.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/red_fox/red_fox_6.jpg": {
+    "subject": "red fox",
+    "category": "animal",
+    "attributes": [
+      "orange fur",
+      "white-tipped tail",
+      "sitting",
+      "wooden steps"
+    ],
+    "caption": "A red fox sits on outdoor wooden steps near a forest.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/red_fox/red_fox_7.jpg": {
+    "subject": "red fox",
+    "category": "animal",
+    "attributes": [
+      "reddish-brown fur",
+      "pointed ears",
+      "lying down",
+      "green grass"
+    ],
+    "caption": "Two red foxes resting on a lush green lawn.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/red_fox/red_fox_8.jpg": {
+    "subject": "red fox",
+    "category": "animal",
+    "attributes": [
+      "reddish-orange fur",
+      "white chin and chest",
+      "dark whiskers",
+      "amber eyes",
+      "laying in straw"
+    ],
+    "caption": "A red fox rests comfortably in a bed of straw.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/red_fox/red_fox_9.jpg": {
+    "subject": "red fox",
+    "category": "animal",
+    "attributes": [
+      "reddish-brown fur",
+      "white chest and neck",
+      "standing",
+      "eyes closed",
+      "chain link fence background"
+    ],
+    "caption": "A red fox stands outdoors near a chain link fence with its eyes closed.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/wolf/wolf_1.jpg": {
+    "subject": "gray wolf",
+    "category": "animal",
+    "attributes": [
+      "gray fur",
+      "standing",
+      "green grass",
+      "outdoor"
+    ],
+    "caption": "A gray wolf stands alertly in a grassy field.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/wolf/wolf_10.jpg": {
+    "subject": "white dog",
+    "category": "animal",
+    "attributes": [
+      "white fur",
+      "sitting",
+      "looking up",
+      "outdoor",
+      "mossy background"
+    ],
+    "caption": "A white dog sits outdoors amidst a lush, mossy, green environment and looks upward.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/wolf/wolf_2.jpg": {
+    "subject": "gray wolf",
+    "category": "animal",
+    "attributes": [
+      "gray fur",
+      "yellow eyes",
+      "pointed ears",
+      "standing posture"
+    ],
+    "caption": "A gray wolf stands alert outdoors against a dark background.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/wolf/wolf_3.jpg": {
+    "subject": "gray wolf",
+    "category": "animal",
+    "attributes": [
+      "furry",
+      "standing",
+      "brown and gray fur",
+      "alert ears",
+      "natural habitat"
+    ],
+    "caption": "A gray wolf stands alert outdoors in a natural habitat.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/wolf/wolf_4.jpg": {
+    "subject": "black wolf",
+    "category": "animal",
+    "attributes": [
+      "dark fur",
+      "lying down",
+      "alert posture",
+      "rocky ground"
+    ],
+    "caption": "A black wolf rests on a flat rock in a forest setting.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/wolf/wolf_5.jpg": {
+    "subject": "gray wolf",
+    "category": "animal",
+    "attributes": [
+      "gray and brown fur",
+      "alert ears",
+      "sharp snout",
+      "green background"
+    ],
+    "caption": "A gray wolf stands alert outdoors with green foliage in the background.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/wolf/wolf_6.jpg": {
+    "subject": "wolf",
+    "category": "animal",
+    "attributes": [
+      "furry",
+      "brown",
+      "alert",
+      "canine"
+    ],
+    "caption": "A close-up of a wolf's head and neck.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/wolf/wolf_7.jpg": {
+    "subject": "Iberian wolf",
+    "category": "animal",
+    "attributes": [
+      "brown fur",
+      "pointed ears",
+      "walking",
+      "outdoor"
+    ],
+    "caption": "An Iberian wolf walking on a dirt ground outdoors.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/wolf/wolf_8.jpg": {
+    "subject": "Siberian husky",
+    "category": "animal",
+    "attributes": [
+      "gray and white fur",
+      "pointed ears",
+      "standing in tall grass",
+      "open mouth"
+    ],
+    "caption": "A gray and white husky stands alertly among tall grass and foliage.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/wolf/wolf_9.jpg": {
+    "subject": "gray wolf",
+    "category": "animal",
+    "attributes": [
+      "dark fur",
+      "pointed ears",
+      "amber eyes",
+      "sitting pose"
+    ],
+    "caption": "A gray wolf sitting on a dark surface and looking up.",
+    "confidence": 0.95,
+    "status": "tagged"
+  }
+}
