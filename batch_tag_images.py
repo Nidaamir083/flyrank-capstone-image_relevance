@@ -23,6 +23,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types, errors
+import httpx
 from pydantic import ValidationError
 
 from schemas import ImageTags
@@ -136,6 +137,11 @@ def tag_with_retries(image_path):
                 raise DailyQuotaReached()
             if error.code not in TEMPORARY_ERROR_CODES:
                 break  # a permanent error (like a wrong key): retrying won't help
+
+        except httpx.HTTPError as error:
+            # The internet connection dropped or timed out. Treat it like a busy server.
+            log_cost(image_path, 0, 0, "network_error")
+            print(f"   Attempt {attempt}: network problem ({type(error).__name__})")
 
         # Wait longer after each failure: 2s, then 4s, then 8s
         if attempt < MAX_ATTEMPTS:

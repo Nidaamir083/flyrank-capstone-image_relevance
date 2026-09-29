@@ -662,5 +662,71 @@
     "caption": "A gray wolf sitting on a dark surface and looking up.",
     "confidence": 0.95,
     "status": "tagged"
+  },
+  "images/deer/deer_11.jpg": {
+    "subject": "white-tailed deer",
+    "category": "animal",
+    "attributes": [
+      "brown fur",
+      "small antlers",
+      "white tail patch",
+      "standing in field"
+    ],
+    "caption": "A young white-tailed deer with small antlers stands alert in a harvested field.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/deer/deer_12.jpg": {
+    "subject": "white-tailed deer",
+    "category": "animal",
+    "attributes": [
+      "brown fur",
+      "standing in snow",
+      "looking back",
+      "grassy field"
+    ],
+    "caption": "Two white-tailed deer stand in a snow-dusted field, with one looking back towards the camera.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/deer/deer_13.jpg": {
+    "subject": "red deer stag",
+    "category": "animal",
+    "attributes": [
+      "large antlers",
+      "brown fur",
+      "standing on grass",
+      "side profile"
+    ],
+    "caption": "A majestic red deer stag stands alert in a grassy field.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/deer/deer_14.jpg": {
+    "subject": "fallow deer",
+    "category": "animal",
+    "attributes": [
+      "spotted coat",
+      "large antlers",
+      "grazing",
+      "brown and white fur",
+      "field setting"
+    ],
+    "caption": "A fallow deer with large antlers grazes on grass in a field.",
+    "confidence": 0.99,
+    "status": "tagged"
+  },
+  "images/deer/deer_15.jpg": {
+    "subject": "fallow deer",
+    "category": "animal",
+    "attributes": [
+      "spotted coat",
+      "small antlers",
+      "yellow ear tags",
+      "green grass background"
+    ],
+    "caption": "A young fallow deer with antlers stands in a grassy field.",
+    "confidence": 0.98,
+    "status": "tagged"
   }
 }
