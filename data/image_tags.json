@@ -728,5 +728,58 @@
     "caption": "A young fallow deer with antlers stands in a grassy field.",
     "confidence": 0.98,
     "status": "tagged"
+  },
+  "images/coyote/coyote_1.jpg": {
+    "subject": "coyote",
+    "category": "animal",
+    "attributes": [
+      "wild",
+      "walking",
+      "canine",
+      "solitary"
+    ],
+    "caption": "A coyote walks through a grassy field.",
+    "confidence": 0.98,
+    "status": "tagged"
+  },
+  "images/coyote/coyote_2.jpg": {
+    "subject": "fox",
+    "category": "animal",
+    "attributes": [
+      "standing",
+      "gray fur",
+      "outdoor",
+      "grassland"
+    ],
+    "caption": "A gray fox stands in a grassy clearing near a wooded area.",
+    "confidence": 0.85,
+    "status": "tagged"
+  },
+  "images/coyote/coyote_3.jpg": {
+    "subject": "coyotes",
+    "category": "animal",
+    "attributes": [
+      "fighting",
+      "snarling",
+      "wild",
+      "grassy field",
+      "canine"
+    ],
+    "caption": "Two coyotes snarl and fight in a grassy field.",
+    "confidence": 0.95,
+    "status": "tagged"
+  },
+  "images/hard_cases/blurry_1.jpg": {
+    "subject": "unknown",
+    "category": "abstract",
+    "attributes": [
+      "blurry",
+      "green background",
+      "indistinct shape",
+      "brown color patch"
+    ],
+    "caption": "An extremely blurred image with a green background and a brown shape.",
+    "confidence": 0.05,
+    "status": "flagged"
   }
 }
