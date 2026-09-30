@@ -1,16 +1,3 @@
-"""
-test_guard_directly.py
-
-What this script does, in plain words:
-Instead of relying on the ranking order to naturally put a bad candidate at
-the top, this FORCES specific images to be checked against a post, so we can
-directly prove the guard's rejection logic works. This matches Probe 3 in
-the capstone brief: "force the wolf as a candidate for the fox post."
-
-Run it with:
-    python test_guard_directly.py
-"""
-
 import json
 from mismatch_guard import (
     looks_ambiguous,
@@ -68,10 +55,8 @@ def main():
 
     posts_by_id = {post["id"]: post for post in posts}
 
-    # ---- The required capstone probe: force the wolf as a candidate for the fox post ----
     check_one_candidate("post_1", "images/wolf/wolf_3.jpg", embeddings, image_tags, posts_by_id)
 
-    # ---- A few more forced tests, to show the guard handles different reasons ----
     check_one_candidate("post_2", "images/wolf/wolf_10.jpg", embeddings, image_tags, posts_by_id)
     check_one_candidate("post_4", "images/deer/deer_4.jpg", embeddings, image_tags, posts_by_id)
     check_one_candidate("post_1", "images/red_fox/red_fox_3.jpg", embeddings, image_tags, posts_by_id)
