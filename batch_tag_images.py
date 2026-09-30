@@ -1,18 +1,3 @@
-"""
-batch_tag_images.py
-
-What this script does, in plain words:
-1. Finds every image inside the images/ folder
-2. Sends each one to Gemini and gets validated tags back
-3. If Gemini is busy or the answer is invalid, it WAITS and RETRIES (up to 3 times)
-4. Saves the tags to data/image_tags.json
-5. Writes one line per AI call to data/cost_log.csv (tokens used)
-6. Skips images that are already done, so you can safely run it again
-
-Run it with:
-    python batch_tag_images.py
-"""
-
 import os
 import csv
 import json
@@ -28,7 +13,6 @@ from pydantic import ValidationError
 
 from schemas import ImageTags
 
-# ---------- Settings ----------
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
 MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.5-flash")
@@ -38,11 +22,10 @@ DATA_FOLDER = "data"
 TAGS_FILE = os.path.join(DATA_FOLDER, "image_tags.json")
 COST_FILE = os.path.join(DATA_FOLDER, "cost_log.csv")
 
-MAX_ATTEMPTS = 4            # how many times we try one image before giving up
-PAUSE_BETWEEN_IMAGES = 10   # seconds to wait between images (free tier has speed limits)
-LOW_CONFIDENCE = 0.6        # below this, an image is flagged for human review
+MAX_ATTEMPTS = 4            
+PAUSE_BETWEEN_IMAGES = 10   
+LOW_CONFIDENCE = 0.6        
 
-# Error codes that usually mean "try again later" (busy server, too many requests)
 TEMPORARY_ERROR_CODES = (429, 500, 503, 504)
 
 
@@ -65,7 +48,6 @@ if not API_KEY:
 client = genai.Client(api_key=API_KEY, http_options=types.HttpOptions(timeout=60000))
 
 
-# ---------- Small helper functions ----------
 def load_saved_results():
     """Loads results from earlier runs, so we don't redo finished images."""
     if os.path.exists(TAGS_FILE):
@@ -88,7 +70,7 @@ def log_cost(image_path, input_tokens, output_tokens, status):
         if file_is_new:
             writer.writerow(["time", "image", "model", "input_tokens",
                              "output_tokens", "cost_usd", "status"])
-        # Free tier = 0 dollars. We still record tokens so the habit is in place.
+        
         writer.writerow([datetime.now().isoformat(timespec="seconds"), image_path,
                          MODEL_NAME, input_tokens, output_tokens, 0.0, status])
 
@@ -107,7 +89,7 @@ def ask_gemini(image_path):
         ),
     )
     usage = response.usage_metadata
-    # Never trust the answer blindly. If it doesn't fit the template, this raises an error.
+    
     tags = ImageTags.model_validate_json(response.text)
     return tags, usage.prompt_token_count, usage.candidates_token_count
 
@@ -125,25 +107,23 @@ def tag_with_retries(image_path):
             return result
 
         except ValidationError:
-            # The AI's answer didn't fit our template.
             log_cost(image_path, 0, 0, "invalid_answer")
             print(f"   Attempt {attempt}: invalid answer from AI")
 
         except errors.APIError as error:
             log_cost(image_path, 0, 0, f"api_error_{error.code}")
             print(f"   Attempt {attempt}: API error {error.code}")
-            # A "PerDay" quota error means today's free allowance is finished.
+            
             if error.code == 429 and "PerDay" in str(error):
                 raise DailyQuotaReached()
             if error.code not in TEMPORARY_ERROR_CODES:
-                break  # a permanent error (like a wrong key): retrying won't help
+                break  
 
         except httpx.HTTPError as error:
-            # The internet connection dropped or timed out. Treat it like a busy server.
             log_cost(image_path, 0, 0, "network_error")
             print(f"   Attempt {attempt}: network problem ({type(error).__name__})")
 
-        # Wait longer after each failure: 2s, then 4s, then 8s
+        
         if attempt < MAX_ATTEMPTS:
             wait = 20 * attempt
             print(f"   Waiting {wait} seconds before trying again...")
@@ -152,20 +132,19 @@ def tag_with_retries(image_path):
     return {"status": "failed"}
 
 
-# ---------- The main batch job ----------
 def main():
     os.makedirs(DATA_FOLDER, exist_ok=True)
 
-    # Find every .jpg inside images/<category>/
+
     image_paths = sorted(glob.glob(os.path.join(IMAGES_FOLDER, "*", "*.jpg")))
     results = load_saved_results()
 
     print(f"Found {len(image_paths)} images. Using model: {MODEL_NAME}\n")
 
     for number, path in enumerate(image_paths, start=1):
-        key = path.replace("\\", "/")  # same style on Windows and Mac
+        key = path.replace("\\", "/")  
 
-        # Skip images that were already tagged successfully in an earlier run
+        
         if key in results and results[key]["status"] in ("tagged", "flagged"):
             print(f"[{number}/{len(image_paths)}] Skipping (already done): {key}")
             continue
@@ -177,7 +156,7 @@ def main():
             print("\nSTOPPED: the free daily limit for this model is used up.")
             print("Run this script again tomorrow, or switch GEMINI_MODEL in .env.")
             break
-        save_results(results)  # save after every image, so a crash loses nothing
+        save_results(results)  
 
         info = results[key]
         if info["status"] == "failed":
@@ -187,7 +166,7 @@ def main():
 
         time.sleep(PAUSE_BETWEEN_IMAGES)
 
-    # ---------- Summary ----------
+    
     total = len(results)
     tagged = sum(1 for r in results.values() if r["status"] == "tagged")
     flagged = sum(1 for r in results.values() if r["status"] == "flagged")
