@@ -1,27 +1,3 @@
-"""
-rank_images.py
-
-What this script does, in plain words:
-1. Loads all the saved embeddings (images and posts)
-2. For ONE chosen post, compares its embedding against every image's embedding
-3. Sorts all images by how close they are in meaning (highest score first)
-4. Prints the top 5, along with each image's subject and category
-
-The comparison uses COSINE SIMILARITY: a score between -1 and 1.
-- 1 means "identical in meaning"
-- 0 means "unrelated"
-- Negative means "opposite in meaning" (rare in practice here)
-
-Note: this script does NOT reject bad matches yet. It just ranks everything,
-even for a post with no good match, like our coffee machine post. That's on
-purpose — the ranking step is "find the best options." The GUARD (next step)
-is what decides whether the best option is actually good enough.
-
-Run it with:
-    python rank_images.py
-Then follow the on-screen prompt to choose which post to test.
-"""
-
 import json
 import math
 
@@ -29,7 +5,7 @@ EMBEDDINGS_FILE = "data/embeddings.json"
 TAGS_FILE = "data/image_tags.json"
 POSTS_FILE = "posts.json"
 
-TOP_N = 5  # how many results to show
+TOP_N = 5  
 
 
 def cosine_similarity(vec_a, vec_b):
@@ -63,7 +39,7 @@ def main():
     with open(POSTS_FILE, "r", encoding="utf-8") as f:
         posts = json.load(f)
 
-    # Show the list of posts so it's easy to pick one
+    
     print("Available posts:")
     for post in posts:
         print(f"  {post['id']}: {post['title']}")
