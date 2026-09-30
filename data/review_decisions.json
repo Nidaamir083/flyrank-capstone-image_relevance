@@ -1,0 +1,27 @@
+{
+  "post_1": {
+    "post_id": "post_1",
+    "post_title": "The secret life of red foxes",
+    "suggestion": {
+      "post_id": "post_1",
+      "result": "accepted",
+      "image": "images/red_fox/red_fox_3.jpg",
+      "score": 0.8371003477048953,
+      "subject": "red fox",
+      "reason": "Subject 'red fox' matches the expected category, and similarity (0.837) is above the threshold."
+    },
+    "review_status": "rejected",
+    "decided_at": "2026-09-30T10:29:04"
+  },
+  "post_7": {
+    "post_id": "post_7",
+    "post_title": "Our new office coffee machine, reviewed",
+    "suggestion": {
+      "post_id": "post_7",
+      "result": "no_confident_match",
+      "reason": "This post is not about any of our known animal categories."
+    },
+    "review_status": "pending",
+    "decided_at": null
+  }
+}
