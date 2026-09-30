@@ -1,33 +1,3 @@
-"""
-review_api.py
-
-What this does, in plain words:
-A small web API with 3 endpoints:
-
-1. GET  /posts/{post_id}/suggestion
-   Runs the guard for one post and returns its answer: an accepted image
-   with a reason, or "no confident match" with a reason.
-
-2. POST /suggestions/{post_id}/approve
-   Records that a human approved the suggestion for this post.
-
-3. POST /suggestions/{post_id}/reject
-   Records that a human rejected the suggestion for this post.
-
-There is also:
-4. GET  /suggestions
-   Lists every suggestion made so far, with its approve/reject status —
-   this is the "simple review table" the capstone brief allows instead of
-   a full frontend.
-
-Decisions are saved to data/review_decisions.json so they survive a restart.
-
-Run it with:
-    uvicorn review_api:app --reload
-Then open http://127.0.0.1:8000/docs in a browser - FastAPI gives you a
-free, clickable page to try every endpoint without writing any code.
-"""
-
 import json
 import os
 from datetime import datetime
@@ -44,7 +14,6 @@ DECISIONS_FILE = "data/review_decisions.json"
 app = FastAPI(title="AI Image Matching Engine - Review API")
 
 
-# ---------- Small helpers to load and save data ----------
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -68,7 +37,6 @@ def get_post_or_404(post_id, posts_by_id):
     return posts_by_id[post_id]
 
 
-# ---------- Endpoints ----------
 @app.get("/posts/{post_id}/suggestion")
 def get_suggestion(post_id: str):
     """Runs the guard for one post and returns its decision, with the reason why."""
@@ -81,7 +49,7 @@ def get_suggestion(post_id: str):
 
     result = check_post(post_id, embeddings, image_tags, posts_by_id)
 
-    # Save this suggestion so it shows up in the review list, defaulting to "pending"
+
     decisions = load_decisions()
     if post_id not in decisions:
         decisions[post_id] = {
