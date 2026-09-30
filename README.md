@@ -87,6 +87,45 @@ cases, more close lookalikes) would be a natural next step to more thoroughly
 stress-test the guard. See `data/eval_results.json` for the full per-post
 breakdown, and `EVIDENCE.md` for the raw output backing every claim above.
 
+## Architecture
+
+```
+images/*.jpg
+     |
+     v
+batch_tag_images.py --(Gemini vision model)--> data/image_tags.json
+     |                                          (subject, category, caption,
+     |                                           attributes, confidence)
+     v
+embed_all.py --(Gemini embedding model)--> data/embeddings.json
+     |                                     (one embedding per image caption,
+     |                                      one embedding per post)
+     v
+mismatch_guard.py
+     |-- rank_images_for_post(): cosine similarity, image embeddings vs. post embedding
+     |-- for each candidate, best score first:
+     |      1. ambiguous photo? (subject mentions >1 animal) -> skip
+     |      2. category mismatch? (subject doesn't match expected keywords) -> reject, explain
+     |      3. below similarity threshold (0.75)? -> stop, "no confident match"
+     |      4. otherwise -> ACCEPT, with score + reason
+     v
+review_api.py (FastAPI)
+     |-- GET  /posts/{post_id}/suggestion      -> runs the guard, returns the decision
+     |-- POST /suggestions/{post_id}/approve   -> human marks it approved
+     |-- POST /suggestions/{post_id}/reject    -> human marks it rejected
+     |-- GET  /suggestions                     -> lists every decision + reason so far
+     v
+data/review_decisions.json  (all human review decisions, saved)
+```
+
+`measure_precision.py` runs the same guard against every post and checks its
+answers against `eval_labels.json` (hand-labeled ground truth), producing the
+top-1 precision score reported above.
+
+See [`DESIGN.md`](./DESIGN.md) for the originally planned architecture (including
+a database layer) and how it differs from what was actually built — see "Known
+deviation" below.
+
 ## Known deviation from the design doc
 
 `DESIGN.md` originally planned a PostgreSQL database with tables for images,
