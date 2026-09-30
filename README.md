@@ -169,6 +169,17 @@ are made.
   coyote) plus one deliberately blurry test image. Enough to demonstrate the
   approach; a production system would need a much larger, more diverse library.
 
+## Utility scripts
+
+- `download_images.py` / `download_coyote.py` — download the sample image dataset from Pexels
+- `shrink_images.py` — detects and resizes any image over 500 KB (max 1200px on
+  the long side). Added after the 5 replacement deer photos (`deer_11.jpg` to
+  `deer_15.jpg`) turned out to be full-resolution originals up to 4 MB each —
+  large enough to slow down uploads to Gemini and risk violating the capstone's
+  "don't commit large datasets" rule. Run once after adding any new image.
+- `make_blurry_test.py` — creates a deliberately blurry test image, used to prove
+  the low-confidence flagging rule actually works (see `EVIDENCE.md`)
+
 ## Project docs
 
 - [`DESIGN.md`](./DESIGN.md) — original design doc

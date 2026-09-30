@@ -1,13 +1,14 @@
 # Build Log: AI Usage
 
-This is the honest log of where AI helped, where it was wrong, and what I changed.
+Honest log of where AI helped, where it was wrong, and what I changed.
 I use Claude as a coding helper and explainer. I must be able to explain any line of my own code.
 
-## Phase 1 and Phase 2
+## Session 1: Phase 1 and Phase 2
 
 ### Where AI helped
-- Explained the capstone brief in simple steps.
-- Drafted `DESIGN.md` (problem, schema, matching strategy, guard rules, database tables, API list, non-goal).
+- Explained the capstone brief in simple steps and suggested a daily pace.
+- Drafted `DESIGN.md` (problem, schema, matching strategy, guard rules, database tables, API list, non-goal) and the starter `README.md`.
+- Wrote `download_images.py` (Pexels download, 10 images for each of 5 animals).
 - Wrote `schemas.py`, `test_one_image.py` and `batch_tag_images.py` (Gemini vision tagging, schema validation, retries, cost log).
 
 ### Where AI was wrong or needed fixing
@@ -28,6 +29,18 @@ I use Claude as a coding helper and explainer. I must be able to explain any lin
 ### Deliberate test cases I added (not from the Pexels search results)
 - `images/coyote/` (3 photos): coyotes are a real lookalike for fox/wolf/dog, a harder test than any of the animals originally in scope.
 - `images/hard_cases/blurry_1.jpg`: a real fox photo I deliberately blurred heavily with `make_blurry_test.py`, specifically to check whether the "flag low confidence" rule actually works, rather than hoping a random stock photo would happen to be unclear. It worked: confidence 0.05, correctly flagged.
+
+### A problem I noticed myself: oversized images
+When I manually added 5 replacement deer photos (`deer_11.jpg` to `deer_15.jpg`,
+after finding several original "deer" photos were actually antelope species), I
+checked their file sizes before committing out of caution and found they ranged
+from 1.3 MB to 4.2 MB each — full-resolution originals, much larger than the
+Pexels "medium" downloads the rest of the dataset used. This mattered for two
+reasons: the capstone brief says not to commit large datasets, and large uploads
+to Gemini may have been contributing to the dropped-connection errors I was
+seeing around the same time. I wrote `shrink_images.py` to resize any image over
+500 KB down to a max of 1200px on the long side, and ran it before committing.
+Lesson: check file sizes before committing new images, not just their content.
 
 ### Things I need to be able to explain (fill in my own words)
 - What `ImageTags.model_validate_json` does and why the schema check matters:
