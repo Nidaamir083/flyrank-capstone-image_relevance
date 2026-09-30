@@ -1,15 +1,3 @@
-"""
-download_coyote.py
-
-What this script does, in plain words:
-- Downloads 3 coyote photos from Pexels into images/coyote/
-- A coyote looks a bit like a fox, a bit like a wolf, and a bit like a dog,
-  so it is a good hard test for the mismatch guard later.
-
-Run it with:
-    python download_coyote.py
-"""
-
 import os
 import requests
 from dotenv import load_dotenv
