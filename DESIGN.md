@@ -18,7 +18,7 @@ thing available.
 ## 2. Non-goal (what we will NOT build)
 
 We will **not** build a full frontend UI. Reviewing and approving image suggestions
-will happen through API endpoints and/or a simple admin table — not a polished web app.
+will happen through API endpoints and/or a simple admin table — not a polished web app. Also this is done on small data, not big data or any other images but only few animal species.
 
 ## 3. Image metadata schema
 
@@ -37,7 +37,7 @@ Every image, after being processed by the vision model, produces this shape:
 Rules:
 - This JSON is checked against a schema before we trust it (using Pydantic in Python).
 - If the response doesn't match the schema, it is **retried**, never accepted as-is.
-- If `confidence` is below a set number (to be tuned in Phase 3), the image is
+- If `confidence` is below a set number, the image is
   **flagged for manual review** instead of being used automatically.
 
 ## 4. Matching strategy
@@ -59,8 +59,7 @@ It rejects a candidate if **any** of these are true:
 
 - The image's `category` doesn't match the post's expected category
   (e.g. post expects "animal: fox", image is tagged "animal: wolf")
-- The similarity score is below the tuned threshold (exact number set during Phase 3,
-  using the labeled eval set)
+- The similarity score is below the tuned threshold.
 - The image's `confidence` score was too low to trust in the first place
 
 When rejected, the guard returns a plain-language reason, e.g.:
@@ -156,7 +155,7 @@ tested and changed independently.
 
 ## 9. Initial image dataset plan
 
-Target: **50 images across 5 categories** (10 each) — animals, to keep scope small
+Target: **59 images across 6 categories**  — animals, to keep scope small
 and match the PDF's fox/wolf/dog example:
 
 - Red fox
@@ -164,7 +163,9 @@ and match the PDF's fox/wolf/dog example:
 - Dog
 - Bear
 - Deer
+- Coyote
+- One blur image
 
 Source: Unsplash or Pexels (free license, no card required). Images will be downloaded
 into an `/images` folder in the repo, or fetched via a small download script if the
-folder gets too large to commit directly.
+folder gets too large to commit directly. While coyote image is downloaded from google. One image is deliberately blurred to test the guard.
