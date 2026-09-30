@@ -1,0 +1,59 @@
+# capstone.yaml
+# Manifest read by the evaluator to run and probe this project.
+# See README.md for full explanation and EVIDENCE.md for proof of each requirement.
+
+name: ai-image-content-matching-engine
+description: >
+  Tags images with a vision model, embeds images and blog posts for semantic
+  matching, ranks candidate images per post, and applies a mismatch guard that
+  rejects incorrect or ambiguous matches with a human-readable reason.
+
+# One command to install dependencies.
+install: pip install -r requirements.txt
+
+# One command to boot the system.
+# Starts the review API on http://127.0.0.1:8000 (interactive docs at /docs).
+run: uvicorn review_api:app --host 127.0.0.1 --port 8000
+
+# Demo data is pre-computed and already committed to the repo, so no database
+# seed step is required to try the system:
+#   - images/            : 59 sample images across 6 categories (bear, deer, dog,
+#                           red fox, wolf, coyote) + 1 deliberately blurry test image
+#   - posts.json          : 7 sample blog posts (one per category + 1 unrelated post)
+#   - data/image_tags.json     : vision model output for every image (Phase 2)
+#   - data/embeddings.json     : embeddings for every image + post (Phase 3)
+#   - eval_labels.json         : hand-labeled ground truth used for evaluation
+# To regenerate any of this from scratch instead of using the committed data:
+seed: |
+  python batch_tag_images.py
+  python embed_all.py
+
+# Runs the guard against every post and reports top-1 precision against the
+# hand-labeled eval set. Real result at time of submission: 7 of 7 (100%).
+test: python measure_precision.py
+
+base_url: http://127.0.0.1:8000
+
+# Endpoints the evaluator can probe once the server is running (see run: above).
+endpoints:
+  - method: GET
+    path: /posts/{post_id}/suggestion
+    description: >
+      Runs the guard for one post and returns its decision: an accepted image
+      with a similarity score and reason, or "no_confident_match" with a
+      reason. Try post_id=post_1 (accepted, red fox) and post_id=post_7
+      (no_confident_match, unrelated post).
+
+  - method: POST
+    path: /suggestions/{post_id}/approve
+    description: Marks the current suggestion for a post as approved by a reviewer.
+
+  - method: POST
+    path: /suggestions/{post_id}/reject
+    description: Marks the current suggestion for a post as rejected by a reviewer.
+
+  - method: GET
+    path: /suggestions
+    description: >
+      Lists every suggestion made so far with its review status and reason —
+      the "simple review table" in place of a frontend UI.
