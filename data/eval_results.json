@@ -1,0 +1,102 @@
+{
+  "correct_count": 7,
+  "total_posts": 7,
+  "precision": 1.0,
+  "results": [
+    {
+      "post_id": "post_1",
+      "title": "The secret life of red foxes",
+      "guard_result": {
+        "post_id": "post_1",
+        "result": "accepted",
+        "image": "images/red_fox/red_fox_3.jpg",
+        "score": 0.8371003477048953,
+        "subject": "red fox",
+        "reason": "Subject 'red fox' matches the expected category, and similarity (0.837) is above the threshold."
+      },
+      "correct": true,
+      "explanation": "Correct: 'images/red_fox/red_fox_3.jpg' (true subject: 'red fox') matches what was expected."
+    },
+    {
+      "post_id": "post_2",
+      "title": "Why gray wolves are misunderstood",
+      "guard_result": {
+        "post_id": "post_2",
+        "result": "accepted",
+        "image": "images/wolf/wolf_3.jpg",
+        "score": 0.8147916923533352,
+        "subject": "gray wolf",
+        "reason": "Subject 'gray wolf' matches the expected category, and similarity (0.815) is above the threshold."
+      },
+      "correct": true,
+      "explanation": "Correct: 'images/wolf/wolf_3.jpg' (true subject: 'gray wolf') matches what was expected."
+    },
+    {
+      "post_id": "post_3",
+      "title": "A beginner's guide to dog breeds",
+      "guard_result": {
+        "post_id": "post_3",
+        "result": "accepted",
+        "image": "images/dog/dog_4.jpg",
+        "score": 0.7904100760720923,
+        "subject": "puppies",
+        "reason": "Subject 'puppies' matches the expected category, and similarity (0.790) is above the threshold."
+      },
+      "correct": true,
+      "explanation": "Correct: 'images/dog/dog_4.jpg' (true subject: 'puppies') matches what was expected."
+    },
+    {
+      "post_id": "post_4",
+      "title": "Deer in the wild: grace and caution",
+      "guard_result": {
+        "post_id": "post_4",
+        "result": "accepted",
+        "image": "images/deer/deer_9.jpg",
+        "score": 0.8628897504944865,
+        "subject": "red deer",
+        "reason": "Subject 'red deer' matches the expected category, and similarity (0.863) is above the threshold."
+      },
+      "correct": true,
+      "explanation": "Correct: 'images/deer/deer_9.jpg' (true subject: 'red deer') matches what was expected."
+    },
+    {
+      "post_id": "post_5",
+      "title": "Bears before winter: the science of hibernation",
+      "guard_result": {
+        "post_id": "post_5",
+        "result": "accepted",
+        "image": "images/bear/bear_2.jpg",
+        "score": 0.8238816097221904,
+        "subject": "grizzly bear",
+        "reason": "Subject 'grizzly bear' matches the expected category, and similarity (0.824) is above the threshold."
+      },
+      "correct": true,
+      "explanation": "Correct: 'images/bear/bear_2.jpg' (true subject: 'grizzly bear') matches what was expected."
+    },
+    {
+      "post_id": "post_6",
+      "title": "The coyote's quiet spread across North America",
+      "guard_result": {
+        "post_id": "post_6",
+        "result": "accepted",
+        "image": "images/coyote/coyote_1.jpg",
+        "score": 0.8244447485255083,
+        "subject": "coyote",
+        "reason": "Subject 'coyote' matches the expected category, and similarity (0.824) is above the threshold."
+      },
+      "correct": true,
+      "explanation": "Correct: 'images/coyote/coyote_1.jpg' (true subject: 'coyote') matches what was expected."
+    },
+    {
+      "post_id": "post_7",
+      "title": "Our new office coffee machine, reviewed",
+      "guard_result": {
+        "post_id": "post_7",
+        "result": "no_confident_match",
+        "reason": "This post is not about any of our known animal categories."
+      },
+      "correct": true,
+      "explanation": "Correct: no real match exists, and the guard correctly found none."
+    }
+  ]
+}
