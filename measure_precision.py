@@ -1,29 +1,3 @@
-"""
-measure_precision.py
-
-What this script does, in plain words:
-1. Runs the mismatch guard on EVERY post, exactly as it would run for real
-2. Compares each answer against eval_labels.json (what YOU determined is
-   actually true, by looking at the photos yourself)
-3. Marks each post CORRECT or INCORRECT
-4. Calculates top-1 precision: the percentage of posts where the system's
-   top suggestion was actually the right answer
-
-Important: the guard itself never sees eval_labels.json. It only ever sees
-the vision model's tags, exactly like it would in the real system. The
-labels file is used ONLY here, afterwards, to check the guard's homework.
-
-A post counts as CORRECT if:
-- The post expects an animal, the guard ACCEPTED an image, and that image's
-  TRUE subject (from our own review) matches what the post expects, AND
-  that image isn't one we flagged as too ambiguous/uncertain to count.
-- OR the post expects no animal at all (like the coffee machine post), and
-  the guard correctly said "no confident match".
-
-Run it with:
-    python measure_precision.py
-"""
-
 import json
 
 from mismatch_guard import check_post
@@ -52,8 +26,7 @@ def score_post(post_id, guard_result, expected, image_tags, labels):
     """Compares the guard's real answer to the ground truth. Returns (is_correct, explanation)."""
     expected_keywords = expected["correct_subject_keywords"]
 
-    if not expected_keywords:
-        # This post should never get a match (e.g. the coffee machine post).
+    if not expected_keywords:.
         if guard_result["result"] == "no_confident_match":
             return True, "Correct: no real match exists, and the guard correctly found none."
         else:
