@@ -6,7 +6,7 @@ Status is updated as I build. Claims without pasted output are marked NOT YET.
 ## AI processing
 
 ### Vision model produces structured output validated against a schema
-Status: DONE (Phase 2)
+Status: DONE 
 
 - Schema: `schemas.py` (`ImageTags`, Pydantic). Confidence must be between 0 and 1.
 - Every Gemini answer is checked with `ImageTags.model_validate_json(...)` in `batch_tag_images.py`.
@@ -25,7 +25,7 @@ Proof (real output from `python test_one_image.py`):
 ```
 
 ### Low-confidence classifications are flagged instead of accepted
-Status: DONE (Phase 2)
+Status: DONE 
 
 - Rule: confidence below 0.6 gives status `flagged`, in `batch_tag_images.py`.
 - Proof: I deliberately created a very blurry test image (`make_blurry_test.py`, heavy
@@ -43,7 +43,7 @@ The model correctly reported very low confidence on an image it genuinely
 could not identify, and the flagging rule caught it.
 
 ### Images are processed through a batch background job with retries
-Status: DONE (Phase 2)
+Status: DONE 
 
 - Script: `batch_tag_images.py` (retries with growing waits, skips finished images,
   60 second timeout per call, retries network errors as well as API errors).
@@ -90,7 +90,7 @@ Status: DONE
 ## Matching system
 
 ### Image and post embeddings are stored; posts return ranked image suggestions
-Status: DONE (Phase 3)
+Status: DONE 
 
 - Script: `embed_all.py`. Every image caption and every post's title+body embedded
   with Gemini's `gemini-embedding-001` model, task type `SEMANTIC_SIMILARITY`.
@@ -131,7 +131,7 @@ Status: PARTLY DEMONSTRATED
 ## Safety layer
 
 ### The mismatch guard rejects incorrect recommendations (wolf on a fox post fails)
-Status: DONE (Phase 3)
+Status: DONE
 
 - Script: `mismatch_guard.py` (ranked candidates, checked in order) and
   `test_guard_directly.py` (forces a specific image against a specific post,
@@ -201,12 +201,15 @@ NO CONFIDENT MATCH
 Status: DESIGNED ONLY (see `DESIGN.md`). Not built yet.
 
 ### API endpoints validated; review workflow (approve / reject / inspect why) exists
-Status: NOT YET (Phase 4)
+Status: DONE
+![alt text](<json response.PNG>)
 
 ## Quality and documentation
 
 ### Labeled evaluation dataset measures top-1 precision; number is in the README
-Status: NOT YET (Phase 4)
+Status: Done
+
+7 of 7 posts correct -> precision = 1.00 (100%)
 
 - Ground-truth notes gathered so far, from my own review of the images (to become
   the eval labels file):
@@ -219,8 +222,9 @@ Status: NOT YET (Phase 4)
   - `coyote_2`: true label coyote (model said "fox", model is wrong here)
 
 ### README with architecture explanation and diagram; required files present
-Status: PARTLY DONE
+Status: DONE
 
-- Present: `README.md` (starter), `DESIGN.md`, `.env.example`, `.gitignore`, `LICENSE`,
-  `EVIDENCE.md`, `BUILDLOG.md`.
-- TODO: `capstone.yaml`, final README with run steps and measured precision.
+- Present: `README.md` (finalized with real setup steps, evaluation results,
+  ASCII architecture diagram, and limitations), `DESIGN.md`, `.env.example`,
+  `.gitignore`, `LICENSE`, `EVIDENCE.md`, `BUILDLOG.md`, `capstone.yaml`,
+  `requirements.txt`.
