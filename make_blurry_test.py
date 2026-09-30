@@ -1,16 +1,3 @@
-"""
-make_blurry_test.py
-
-What this script does, in plain words:
-- Takes one existing photo and makes it very blurry on purpose
-- Saves it into images/hard_cases/
-- This lets us TEST whether the "low confidence gets flagged" rule actually
-  works, instead of hoping a random stock photo happens to be unclear.
-
-Run it with:
-    python make_blurry_test.py
-"""
-
 import os
 from PIL import Image, ImageFilter
 
