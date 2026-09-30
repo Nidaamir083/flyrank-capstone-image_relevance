@@ -1,34 +1,3 @@
-"""
-mismatch_guard.py
-
-What this script does, in plain words:
-For a chosen post, it looks at the ranked images (best match first) and
-decides, one at a time, whether each one is actually good enough to suggest.
-It rejects a candidate for any of these reasons:
-
-  1. AMBIGUOUS PHOTO - the caption mentions more than one animal
-     (e.g. "giraffe and deer"). We can't be sure which animal the photo is
-     really about, so we skip it rather than guess.
-  2. CATEGORY MISMATCH - the image's subject doesn't contain any of the
-     words we expect for this post (e.g. post expects "fox", image says
-     "wolf").
-  3. BELOW THRESHOLD - the similarity score is too low. Once we reach a
-     candidate below the threshold, there is no point checking further
-     down the list, since everything after it scores even lower.
-
-The first candidate that passes ALL checks is ACCEPTED, with an explanation.
-If nothing passes, the result is "no confident match", with the reason why.
-
-This threshold (0.75) was not guessed. It came from real numbers: every
-correct animal match scored between 0.78 and 0.86 in our tests, and the
-one post with no matching image (the coffee machine post) scored only
-0.717 at best. 0.75 sits cleanly between those two groups.
-
-Run it with:
-    python mismatch_guard.py
-Then follow the on-screen prompt to choose which post to test.
-"""
-
 import json
 import math
 
@@ -37,7 +6,7 @@ TAGS_FILE = "data/image_tags.json"
 POSTS_FILE = "posts.json"
 
 SIMILARITY_THRESHOLD = 0.75
-CANDIDATES_TO_CHECK = 10  # how far down the ranked list we're willing to look
+CANDIDATES_TO_CHECK = 10  
 
 
 def cosine_similarity(vec_a, vec_b):
@@ -75,7 +44,6 @@ def check_post(post_id, embeddings, image_tags, posts_by_id):
     post = posts_by_id[post_id]
     expected_keywords = post["expected_keywords"]
 
-    # A post with no expected animal at all can never get a real match.
     if not expected_keywords:
         return {
             "post_id": post_id,
@@ -87,7 +55,6 @@ def check_post(post_id, embeddings, image_tags, posts_by_id):
 
     for image_path, score in ranked[:CANDIDATES_TO_CHECK]:
         if score < SIMILARITY_THRESHOLD:
-            # Everything after this point scores even lower. Stop looking.
             return {
                 "post_id": post_id,
                 "result": "no_confident_match",
@@ -109,7 +76,7 @@ def check_post(post_id, embeddings, image_tags, posts_by_id):
                   f"category mismatch, expected one of [{expected_text}].")
             continue
 
-        # Passed every check.
+        
         return {
             "post_id": post_id,
             "result": "accepted",
