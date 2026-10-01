@@ -1,6 +1,6 @@
 {
-  "correct_count": 7,
-  "total_posts": 7,
+  "correct_count": 10,
+  "total_posts": 10,
   "precision": 1.0,
   "results": [
     {
@@ -92,6 +92,39 @@
       "title": "Our new office coffee machine, reviewed",
       "guard_result": {
         "post_id": "post_7",
+        "result": "no_confident_match",
+        "reason": "This post is not about any of our known animal categories."
+      },
+      "correct": true,
+      "explanation": "Correct: no real match exists, and the guard correctly found none."
+    },
+    {
+      "post_id": "post_8",
+      "title": "Packing light: a carry-on only travel guide",
+      "guard_result": {
+        "post_id": "post_8",
+        "result": "no_confident_match",
+        "reason": "This post is not about any of our known animal categories."
+      },
+      "correct": true,
+      "explanation": "Correct: no real match exists, and the guard correctly found none."
+    },
+    {
+      "post_id": "post_9",
+      "title": "A simple weeknight pasta recipe",
+      "guard_result": {
+        "post_id": "post_9",
+        "result": "no_confident_match",
+        "reason": "This post is not about any of our known animal categories."
+      },
+      "correct": true,
+      "explanation": "Correct: no real match exists, and the guard correctly found none."
+    },
+    {
+      "post_id": "post_10",
+      "title": "Time blocking for remote workers",
+      "guard_result": {
+        "post_id": "post_10",
         "result": "no_confident_match",
         "reason": "This post is not about any of our known animal categories."
       },

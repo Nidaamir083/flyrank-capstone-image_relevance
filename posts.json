@@ -5,7 +5,9 @@
     "body": "Red foxes are famously adaptable, living everywhere from deep forests to city suburbs. Their reddish-orange coat, black-tipped ears, and bushy tail make them one of the most recognizable wild animals. This article looks at how red foxes hunt, raise their young, and survive close to humans without ever fully losing their wild instincts.",
     "expected_category": "animal",
     "expected_subject_hint": "red fox",
-    "expected_keywords": ["fox"]
+    "expected_keywords": [
+      "fox"
+    ]
   },
   {
     "id": "post_2",
@@ -13,7 +15,9 @@
     "body": "Few animals carry as much myth and fear as the gray wolf. In reality, wolves are highly social, living in tight family packs and playing a key role in keeping ecosystems balanced. This piece explores wolf pack behavior, howling as communication, and the ongoing debate around wolf conservation in the wild.",
     "expected_category": "animal",
     "expected_subject_hint": "wolf",
-    "expected_keywords": ["wolf"]
+    "expected_keywords": [
+      "wolf"
+    ]
   },
   {
     "id": "post_3",
@@ -21,7 +25,11 @@
     "body": "From tiny lapdogs to towering guardians, dogs come in an astonishing range of shapes and personalities. This guide walks new dog owners through popular breeds, temperament differences, and what to expect in the first year of raising a puppy.",
     "expected_category": "animal",
     "expected_subject_hint": "dog",
-    "expected_keywords": ["dog", "puppy", "puppies"]
+    "expected_keywords": [
+      "dog",
+      "puppy",
+      "puppies"
+    ]
   },
   {
     "id": "post_4",
@@ -29,7 +37,9 @@
     "body": "Deer are quiet, watchful animals, often seen grazing at the edges of forests at dawn or dusk. This article covers the differences between species like red deer and fallow deer, their antler cycles, and how they've adapted to living near human settlements.",
     "expected_category": "animal",
     "expected_subject_hint": "deer",
-    "expected_keywords": ["deer"]
+    "expected_keywords": [
+      "deer"
+    ]
   },
   {
     "id": "post_5",
@@ -37,7 +47,9 @@
     "body": "As autumn ends, bears enter a period of intense eating before settling into hibernation. This piece explains how brown bears and grizzlies prepare their bodies to survive months without eating, and what happens inside a bear's body during that long winter sleep.",
     "expected_category": "animal",
     "expected_subject_hint": "bear",
-    "expected_keywords": ["bear"]
+    "expected_keywords": [
+      "bear"
+    ]
   },
   {
     "id": "post_6",
@@ -45,14 +57,40 @@
     "body": "While wolves have retreated from much of their historic range, coyotes have done the opposite, expanding into cities, suburbs, and farmland across the continent. This article looks at why coyotes are such effective survivors and how they differ from their wolf and fox relatives.",
     "expected_category": "animal",
     "expected_subject_hint": "coyote",
-    "expected_keywords": ["coyote"]
+    "expected_keywords": [
+      "coyote"
+    ]
   },
   {
     "id": "post_7",
     "title": "Our new office coffee machine, reviewed",
     "body": "After months of complaints about the old drip machine, our office finally upgraded to a proper espresso setup. This short review covers ease of use, cleaning, and whether it was worth the cost for a team of twelve people.",
     "expected_category": "none",
-    "expected_subject_hint": "no animal at all — this post should get NO image match",
+    "expected_subject_hint": "no animal at all \u2014 this post should get NO image match",
+    "expected_keywords": []
+  },
+  {
+    "id": "post_8",
+    "title": "Packing light: a carry-on only travel guide",
+    "body": "Traveling with just a carry-on takes planning, not sacrifice. This guide covers how to choose versatile clothing, pack efficiently with compression cubes, and avoid the most common mistakes first-time light packers make on international trips.",
+    "expected_category": "none",
+    "expected_subject_hint": "no animal at all \u2014 this post should get NO image match",
+    "expected_keywords": []
+  },
+  {
+    "id": "post_9",
+    "title": "A simple weeknight pasta recipe",
+    "body": "This fifteen-minute pasta recipe uses pantry staples you probably already have: garlic, olive oil, chili flakes, and parmesan. A reliable dinner for busy weeknights, with a few variations for adding protein or extra vegetables.",
+    "expected_category": "none",
+    "expected_subject_hint": "no animal at all \u2014 this post should get NO image match",
+    "expected_keywords": []
+  },
+  {
+    "id": "post_10",
+    "title": "Time blocking for remote workers",
+    "body": "Time blocking is a scheduling method where you assign specific hours to specific tasks instead of working from an open-ended to-do list. This article explains how to set up a weekly time-blocked calendar and avoid the common trap of over-scheduling.",
+    "expected_category": "none",
+    "expected_subject_hint": "no animal at all \u2014 this post should get NO image match",
     "expected_keywords": []
   }
 ]

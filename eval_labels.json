@@ -1,26 +1,104 @@
 {
   "_notes": "Ground truth labels from manual visual review (Phases 2-3). true_subject is what the image ACTUALLY shows, based on looking at the photo myself - not what the folder name or the AI's tag says. exclude_reason is set when an image is too ambiguous to use fairly in evaluation.",
-
-  "images/deer/deer_1.jpg":  { "true_subject": "blackbuck",  "true_category": "animal", "exclude_reason": null },
-  "images/deer/deer_3.jpg":  { "true_subject": "nyala",      "true_category": "animal", "exclude_reason": null },
-  "images/deer/deer_4.jpg":  { "true_subject": "giraffe and antelope", "true_category": "animal", "exclude_reason": "mixed photo, more than one animal" },
-  "images/deer/deer_5.jpg":  { "true_subject": "springbok",  "true_category": "animal", "exclude_reason": null },
-  "images/deer/deer_10.jpg": { "true_subject": "blackbuck",  "true_category": "animal", "exclude_reason": null },
-
-  "images/wolf/wolf_8.jpg":  { "true_subject": "husky or wolfdog", "true_category": "animal", "exclude_reason": "uncertain species, not clearly a wild wolf" },
-  "images/wolf/wolf_10.jpg": { "true_subject": "wolf", "true_category": "animal", "exclude_reason": null },
-
-  "images/coyote/coyote_2.jpg": { "true_subject": "coyote", "true_category": "animal", "exclude_reason": null },
-
-  "images/hard_cases/blurry_1.jpg": { "true_subject": "unknown", "true_category": "unknown", "exclude_reason": "deliberately blurred test image, not a real candidate photo" },
-
+  "images/deer/deer_1.jpg": {
+    "true_subject": "blackbuck",
+    "true_category": "animal",
+    "exclude_reason": null
+  },
+  "images/deer/deer_3.jpg": {
+    "true_subject": "nyala",
+    "true_category": "animal",
+    "exclude_reason": null
+  },
+  "images/deer/deer_4.jpg": {
+    "true_subject": "giraffe and antelope",
+    "true_category": "animal",
+    "exclude_reason": "mixed photo, more than one animal"
+  },
+  "images/deer/deer_5.jpg": {
+    "true_subject": "springbok",
+    "true_category": "animal",
+    "exclude_reason": null
+  },
+  "images/deer/deer_10.jpg": {
+    "true_subject": "blackbuck",
+    "true_category": "animal",
+    "exclude_reason": null
+  },
+  "images/wolf/wolf_8.jpg": {
+    "true_subject": "husky or wolfdog",
+    "true_category": "animal",
+    "exclude_reason": "uncertain species, not clearly a wild wolf"
+  },
+  "images/wolf/wolf_10.jpg": {
+    "true_subject": "wolf",
+    "true_category": "animal",
+    "exclude_reason": null
+  },
+  "images/coyote/coyote_2.jpg": {
+    "true_subject": "coyote",
+    "true_category": "animal",
+    "exclude_reason": null
+  },
+  "images/hard_cases/blurry_1.jpg": {
+    "true_subject": "unknown",
+    "true_category": "unknown",
+    "exclude_reason": "deliberately blurred test image, not a real candidate photo"
+  },
   "_expected_match_per_post": {
-    "post_1": { "correct_subject_keywords": ["fox"], "note": "any real red fox photo is an acceptable correct answer" },
-    "post_2": { "correct_subject_keywords": ["wolf"], "note": "wolf_10 IS a correct wolf by true label, but the model tagged it 'white dog', so it will not be offered - this is expected and tracked separately" },
-    "post_3": { "correct_subject_keywords": ["dog", "puppy", "puppies"], "note": "any dog/puppy photo is acceptable" },
-    "post_4": { "correct_subject_keywords": ["deer"], "note": "only deer_2, deer_6, deer_7, deer_8, deer_9, deer_11 to deer_15 are true deer; the blackbuck/nyala/springbok/giraffe photos are NOT acceptable even though they were in the deer folder" },
-    "post_5": { "correct_subject_keywords": ["bear"], "note": "any bear photo is acceptable" },
-    "post_6": { "correct_subject_keywords": ["coyote"], "note": "any coyote photo is acceptable" },
-    "post_7": { "correct_subject_keywords": [], "note": "no correct image exists - correct system behavior is 'no confident match'" }
+    "post_1": {
+      "correct_subject_keywords": [
+        "fox"
+      ],
+      "note": "any real red fox photo is an acceptable correct answer"
+    },
+    "post_2": {
+      "correct_subject_keywords": [
+        "wolf"
+      ],
+      "note": "wolf_10 IS a correct wolf by true label, but the model tagged it 'white dog', so it will not be offered - this is expected and tracked separately"
+    },
+    "post_3": {
+      "correct_subject_keywords": [
+        "dog",
+        "puppy",
+        "puppies"
+      ],
+      "note": "any dog/puppy photo is acceptable"
+    },
+    "post_4": {
+      "correct_subject_keywords": [
+        "deer"
+      ],
+      "note": "only deer_2, deer_6, deer_7, deer_8, deer_9, deer_11 to deer_15 are true deer; the blackbuck/nyala/springbok/giraffe photos are NOT acceptable even though they were in the deer folder"
+    },
+    "post_5": {
+      "correct_subject_keywords": [
+        "bear"
+      ],
+      "note": "any bear photo is acceptable"
+    },
+    "post_6": {
+      "correct_subject_keywords": [
+        "coyote"
+      ],
+      "note": "any coyote photo is acceptable"
+    },
+    "post_7": {
+      "correct_subject_keywords": [],
+      "note": "no correct image exists - correct system behavior is 'no confident match'"
+    },
+    "post_8": {
+      "correct_subject_keywords": [],
+      "note": "travel packing post, no correct image exists - correct behavior is 'no confident match'"
+    },
+    "post_9": {
+      "correct_subject_keywords": [],
+      "note": "pasta recipe post, no correct image exists - correct behavior is 'no confident match'"
+    },
+    "post_10": {
+      "correct_subject_keywords": [],
+      "note": "time management post, no correct image exists - correct behavior is 'no confident match'"
+    }
   }
 }
