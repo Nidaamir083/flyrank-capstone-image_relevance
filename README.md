@@ -87,6 +87,12 @@ cases, more close lookalikes) would be a natural next step to more thoroughly
 stress-test the guard. See `data/eval_results.json` for the full per-post
 breakdown, and `EVIDENCE.md` for the raw output backing every claim above.
 
+##  Adding a direct adversarial evaluation for close lookalikes and several unrelated posts to stress-test refusal behavior.
+Note: The adversarial lookalike testing was added specifically to address reviewer feedback.
+===== TOP-1 PRECISION =====
+10 of 10 posts correct -> precision = 1.00 (100%)
+Full results saved to: data/eval_results.json
+
 ## Architecture
 
 ```

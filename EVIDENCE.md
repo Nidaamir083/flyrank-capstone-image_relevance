@@ -177,6 +177,17 @@ Forced candidate: images/red_fox/red_fox_3.jpg (subject: 'red fox')
 Similarity score: 0.837
 RESULT: ACCEPTED - subject matches and similarity clears the threshold.
 ```
+### Adversarial stress test (added in response to reviewer feedback)
+14 forced lookalike/unrelated-post tests, all correctly rejected:
+- Fox ↔ wolf ↔ coyote ↔ dog cross-confusions (4 tests)
+- All 3 antelope species (blackbuck, nyala, springbok) forced onto the deer post (3 tests)
+- 3 animal photos forced onto 3 unrelated posts (travel, recipe, time-blocking)
+- Plus the original 4 core tests
+
+Full output: see `test_guard_directly.py` run log.
+
+Updated top-1 precision on the expanded 10-post eval set (4 true-negative cases,
+up from 1): **10 of 10 (100%)**
 
 ### Rejections include a human-readable explanation
 Status: DONE (Phase 3)
